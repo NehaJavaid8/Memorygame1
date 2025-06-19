@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="start-screen">
+    <h1>Memory Match Game</h1>
+    <p>Test your memory by matching pairs of emojis. Complete all 3 levels to win!</p>
+    
+    <div class="emoji-grid">
+      <div class="emoji-preview">🍎</div>
+      <div class="emoji-preview">🍕</div>
+      <div class="emoji-preview">🐶</div>
+      <div class="emoji-preview">🎈</div>
+      <div class="emoji-preview">🚗</div>
+      <div class="emoji-preview">🌟</div>
+      <div class="emoji-preview">🐱</div>
+      <div class="emoji-preview">⚽️</div>
+    </div>
+    
+    <button id="start-btn" class="btn btn-start">Start Game</button>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="hidden">
+    <h1>Memory Game</h1>
+    <div id="game-info">
+      <p>⏱️ Time: <span id="timer">0</span>s</p>
+      <p>🧮 Score: <span id="score">0</span></p>
+      <p>🎮 Level: <span id="level">1</span>/3</p>
+    </div>
+    <div id="game-board" class="game-board"></div>
+  </div>
+
+  <!-- Level Complete Modal -->
+  <div id="level-complete-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Level Complete! 🎉</h2>
+      <p>You finished Level <span id="completed-level">1</span> in <span id="completed-time">0</span> seconds!</p>
+      <p>Your score: <span id="completed-score">0</span></p>
+      <div class="level-indicator">Level <span id="next-level">2</span>/3</div>
+      <button id="next-level-btn" class="btn btn-next">Next Level</button>
+    </div>
+  </div>
+
+  <!-- Game Complete Modal -->
+  <div id="game-complete-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Congratulations! 🏆</h2>
+      <p>You've completed all levels with a total score of <span id="total-score">0</span>!</p>
+      <button id="play-again-btn" class="btn btn-start">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
